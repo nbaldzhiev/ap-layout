@@ -3,6 +3,18 @@
 }
 
 .header-container {
-    width: 90rem;
+    width: 1400px;
     margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+}
+
+.logo-site-title {
+    align-self: center;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
