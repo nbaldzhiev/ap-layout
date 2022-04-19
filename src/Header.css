@@ -26,12 +26,12 @@
     justify-content: space-between;
 }
 
-.news-category, .expanded-news-category {
+.news-category, .expanded-news-category, .expanded-nested-news-category {
     text-decoration: none;
     color: #000000;
 }
 
-.news-category { 
+.news-category, .expanded-nested-news-category { 
     font-weight: 400;
     font-size: 1.1rem;
 }
@@ -55,18 +55,29 @@
 }
 
 /* EXPANDED SECTIONS */
-.sections-collapsible {
-    height: 200px;
-}
-
-.sections-collapsible > .top-row {
+.sections-collapsible > .top-row, .sections-collapsible > .bottom-row {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .expanded-news-category {
+    width: 6.25rem;
+    margin-right: 6rem;
     font-size: 1.2rem;
     font-weight: 500;
+}
+
+.expanded-news-category-container, .nested-news-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.expanded-nested-news-category {
+    margin-bottom: .5rem;
+}
+
+.expanded-news-category-container > .expanded-news-category {
+    margin-bottom: .4rem;
 }
 /* END EXPANDED SECTIONS */
 
@@ -74,6 +85,11 @@
     .header-container {
         width: 100%;
         padding: .5rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .non-collapsible-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -84,11 +100,12 @@
     }
 
     .news-category {
-        display: none;
+        display: none !important;
     }
 
     .logo-site-title {
         margin-left: 1rem;
+        font-size: 1.6rem;
     }
 
     .logo-image {
@@ -97,11 +114,38 @@
     }
 
     .hamburger-icon, .search-icon {
+        display: block !important;
         width: 28px;
         height: 28px;
     }
 
     img {
         display: block;
+    }
+
+    .sections-collapsible {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .sections-collapsible > .top-row, .sections-collapsible > .bottom-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .expanded-news-category {
+        width: auto;
+        margin-right: 0;
+        margin-bottom: .8rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .nested-news-container {
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 120px;
     }
 }
