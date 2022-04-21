@@ -42,7 +42,7 @@ function Header() {
               <img className="search-icon" src={SearchIcon} placeholder="search icon" width="24" height="24" style={displayTernary} />
               <div className="sections-container" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}}>
                 <p className="news-category" style={displayTernary}>Sections</p>
-                <img className="hamburger-icon" src={HamburgerIcon} placeholder="hamburger icon" width="24" height="24" style={displayTernary} />
+                {isExpanded === 'block' ? <img className="close-icon-mobile" src={closeIcon} placeholder="collapse icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} style={{display: isExpanded === 'block' ? 'block' : 'none'}} /> : <img className="hamburger-icon" src={HamburgerIcon} placeholder="hamburger icon" width="24" height="24" style={displayTernary} /> }
               </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ function Header() {
                 <Link to="/financial-markets" className="expanded-nested-news-category">Financial Markets</Link>
               </div>
             </div>
-            <img className="close-icon" src={closeIcon} placeholder="hamburger icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} />
+            <img className="close-icon-desktop" src={closeIcon} placeholder="close icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} />
           </div>
           <div className="bottom-row">
             <Link to="/technology" className="expanded-news-category">Technology</Link>
