@@ -11,7 +11,6 @@ function HomeNews(props) {
   const [photos, setPhotos] = useState([]);
   const [newsText, setNewsText] = useState([]);
 
-  const mainArticleUrl = photos.length === 30 ? photos[0].url : "loading";
   const mainArticleAlt = photos.length === 30 ? photos[0].alt : "loading";
   const mainArticleLandscapeSrc = photos.length === 30 ? photos[0].src.landscape : "loading";
   const mainArticleAuthor = photos.length === 30 ? photos[0].photographer : "loading";
@@ -79,7 +78,23 @@ function HomeNews(props) {
             </div>
           </div>
         </div>
-        <div className="home-news-second-news-column"></div>
+        <div className="home-news-second-news-column">
+          <p className="topic-headliner">Russia-Ukraine war</p>
+          {
+            photos.length ? photos.slice(1, 6).map(
+              photo => <div className="secondary-news-article">
+                <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                <div className="thumbnail-author-container">
+                  <img alt="news article thumbnail"src={photo.src.landscape} width="87.9141" height="58.4609" />
+                  <div>
+                    <p>By {photo.photographer}</p>
+                    <p>today</p>
+                  </div>
+                </div>
+              </div>
+            ) : 'loading'
+          }
+        </div>
         <div className="home-news-third-news-column"></div>
       </div>
     </div>
