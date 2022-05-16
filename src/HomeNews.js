@@ -79,7 +79,7 @@ function HomeNews(props) {
           </div>
         </div>
         <div className="home-news-second-news-column">
-          <p className="topic-headliner">Russia-Ukraine war</p>
+          <a className="button-link topic-headliner" href="#">Russia-Ukraine war</a>
           {
             photos.length ? photos.slice(1, 6).map(
               photo => <div className="secondary-news-article">
@@ -95,7 +95,24 @@ function HomeNews(props) {
             ) : 'loading'
           }
         </div>
-        <div className="home-news-third-news-column"></div>
+        <div className="home-news-third-news-column">
+          {
+            photos.length ? photos.slice(6, 10).map(
+              photo => <div className="secondary-news-article">
+                <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                <div className="thumbnail-author-container">
+                  <img alt="news article thumbnail"src={photo.src.landscape} width="87.9141" height="58.4609" />
+                  <div>
+                    <p>By {photo.photographer}</p>
+                    <p>today</p>
+                  </div>
+                </div>
+              </div>
+            ) : 'loading'
+          }
+          <hr className="separator-line"/>
+          <a className="button-link top-news-headliner" href="#">All Top News →</a>
+        </div>
       </div>
     </div>
   );
