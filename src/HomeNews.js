@@ -83,12 +83,16 @@ function HomeNews(props) {
           {
             photos.length ? photos.slice(1, 6).map(
               photo => <div className="secondary-news-article">
-                <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                <div className="article-title-author-container">
+                  <p className="article-topic" style={{display: 'none'}}>{photo.photographer_id}</p>
+                  <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                  <p className="by-mobile">By {photo.photographer}</p>
+                </div>
                 <div className="thumbnail-author-container">
                   <img alt="news article thumbnail"src={photo.src.landscape} width="87.9141" height="58.4609" />
                   <div>
-                    <p>By {photo.photographer}</p>
-                    <p>today</p>
+                    <p className="by">By {photo.photographer}</p>
+                    <p className="elapsed">today</p>
                   </div>
                 </div>
               </div>
@@ -99,12 +103,16 @@ function HomeNews(props) {
           {
             photos.length ? photos.slice(6, 10).map(
               photo => <div className="secondary-news-article">
-                <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                <div className="article-title-author-container">
+                  <p className="article-topic" style={{display: 'none'}}>{photo.photographer_id}</p>
+                  <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                  <p className="by-mobile">By {photo.photographer}</p>
+                </div>
                 <div className="thumbnail-author-container">
                   <img alt="news article thumbnail"src={photo.src.landscape} width="87.9141" height="58.4609" />
                   <div>
-                    <p>By {photo.photographer}</p>
-                    <p>today</p>
+                    <p className="by">By {photo.photographer}</p>
+                    <p className="elapsed">today</p>
                   </div>
                 </div>
               </div>
