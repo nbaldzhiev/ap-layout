@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Outlet, useLocation } from "react-router-dom";
 import './HomeNews.css';
 import facebookLogo from "./facebook.png";
 import twitterIcon from "./twitter.png";
@@ -10,7 +11,9 @@ function HomeNews(props) {
   const category = props.category;
   const [photos, setPhotos] = useState([]);
   const [newsText, setNewsText] = useState([]);
+  const { pathname } = useLocation();
 
+  const mainArticleId = photos.length === 30 ? photos[0].id : "loading";
   const mainArticleAlt = photos.length === 30 ? photos[0].alt : "loading";
   const mainArticleLandscapeSrc = photos.length === 30 ? photos[0].src.landscape : "loading";
   const mainArticleAuthor = photos.length === 30 ? photos[0].photographer : "loading";
@@ -48,6 +51,16 @@ function HomeNews(props) {
     getNewsText();
   }, [])
 
+  useEffect(() => {
+    if (pathname.length > 1) {
+      document.querySelector('.home-news-container > div:first-child').style.display = 'none';
+      document.querySelector('.home-news-container > div:nth-child(2)').style.display = 'none';
+    } else {
+      document.querySelector('.home-news-container > div:first-child').style.display = 'block';
+      document.querySelector('.home-news-container > div:nth-child(2)').style.display = 'flex';
+    }
+  }, [pathname])
+
   return (
     <div className="home-news-container">
       <div className="home-news-header">
@@ -56,7 +69,7 @@ function HomeNews(props) {
       </div>
       <div className="home-news-news-container">
         <div className="home-news-first-news-column">
-          <Link to={mainArticleAlt.split(' ').join('-')} className="article-title">{mainArticleAlt}</Link>
+          <Link to={`${mainArticleId}`} className="article-title">{mainArticleAlt}</Link>
           <div className="article-meta">
             <p className="article-by">By {mainArticleAuthor.toUpperCase()}</p>
             <p className="article-elapsed">{elapsedTime} ago</p>
@@ -82,10 +95,10 @@ function HomeNews(props) {
           <a className="button-link topic-headliner" href="#">Russia-Ukraine war</a>
           {
             photos.length ? photos.slice(1, 6).map(
-              photo => <div className="secondary-news-article">
+              photo => <div className="secondary-news-article" key={photos.indexOf(photo)}>
                 <div className="article-title-author-container">
                   <p className="article-topic" style={{display: 'none'}}>{photo.photographer_id}</p>
-                  <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                  <Link to={`${photo.id}`} className="article-title">{photo.alt}</Link>
                   <p className="by-mobile">By {photo.photographer}</p>
                 </div>
                 <div className="thumbnail-author-container">
@@ -102,10 +115,10 @@ function HomeNews(props) {
         <div className="home-news-third-news-column">
           {
             photos.length ? photos.slice(6, 10).map(
-              photo => <div className="secondary-news-article">
+              photo => <div className="secondary-news-article" key={photos.indexOf(photo)}>
                 <div className="article-title-author-container">
                   <p className="article-topic" style={{display: 'none'}}>{photo.photographer_id}</p>
-                  <Link to={photo.alt.split(' ').join('-')} className="article-title">{photo.alt}</Link>
+                  <Link to={`${photo.id}`} className="article-title">{photo.alt}</Link>
                   <p className="by-mobile">By {photo.photographer}</p>
                 </div>
                 <div className="thumbnail-author-container">
@@ -122,6 +135,7 @@ function HomeNews(props) {
           <a className="button-link top-news-headliner" href="#">All Top News →</a>
         </div>
       </div>
+    <Outlet />
     </div>
   );
 }

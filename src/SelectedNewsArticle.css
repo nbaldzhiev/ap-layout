@@ -1,0 +1,87 @@
+.article-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #2c2c2c;
+}
+
+.article-meta-container {
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #2c2c2c;;
+}
+
+.article-meta-container .author > span {
+    text-transform: uppercase;
+}
+
+.article-meta-container .author {
+    margin-right: 1.2rem;
+}
+
+.red-line {
+    margin-top: .8rem;
+    margin-bottom: 1.4rem;
+    width: 64px;
+    height: 7px;
+    background-color: #ff322e;
+    border: none;
+}
+
+.separator-line {
+    color: lightgray;
+    opacity: 30%;
+}
+
+.image-container {
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.image-container > img {
+    object-fit: cover;
+    width: 931px;
+    height: 620.977px;
+}
+
+.links-container > .icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    margin-right: 1rem;
+    height: 50px;
+    font-size: 0;
+}
+
+.click-to-copy-link {
+    border: 1px solid #0a3175;
+    border-radius: 15px;
+    color: #0a3175;
+    width: 110px;
+    text-align: center;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    padding-top: .1rem;
+    padding-bottom: .1rem;
+}
+
+.links-container, .related-topics-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.related-topics-container > p.related-topics {
+    text-transform: uppercase;
+    color: #2c2c2c;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.related-topics-container > a {
+    text-decoration: none;
+    color: #0a3175;
+    margin-bottom: .4rem;
+}

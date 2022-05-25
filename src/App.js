@@ -2,6 +2,7 @@ import './App.css';
 import { Link, Routes, Route } from "react-router-dom";
 import Header from "./Header.js";
 import HomeNews from "./HomeNews.js";
+import SelectedNewsArticle from "./SelectedNewsArticle.js";
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
       <main className="main-container">
 
         <Routes>
-          <Route path="/" element={<HomeNews category={defaultCategory} />} /> 
+          <Route path="/" element={<HomeNews category={defaultCategory} />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
           <Route path="/european-union" element={<p> /european-union </p>} />
           <Route path="/world-news" element={<p> /world-news </p>} />
           <Route path="/politics" element={<p> /world-news </p>} />
