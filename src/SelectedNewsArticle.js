@@ -20,19 +20,18 @@ function SelectedNewsArticle() {
   const authToken = '563492ad6f917000010000014065df06dbb24fc08d9c3df9dcd9e597';
   const searchEndpoint = 'photos';
 
-  async function getPhoto() {
-    const response = await fetch(
-      `${baseUrl}${searchEndpoint}/${articleId}`,
-      {
-        method: 'GET',
-        headers: {'Authorization': authToken}
-      }
-    );
-    const data = await response.json();
-    setPhoto(data);
-  }
-
   useEffect(() => {
+    async function getPhoto() {
+      const response = await fetch(
+        `${baseUrl}${searchEndpoint}/${articleId}`,
+        {
+          method: 'GET',
+          headers: {'Authorization': authToken}
+        }
+      );
+      const data = await response.json();
+      setPhoto(data);
+    }
     getPhoto();
   }, [])
 
@@ -50,22 +49,22 @@ function SelectedNewsArticle() {
       </div>
       <div className="links-container">
         <div className="icons-container">
-          <a href="#"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
-          <a href="#"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
-          <a href="#"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
+          <a href="/"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
+          <a href="/"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
+          <a href="/"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
         </div>
-        <a href="#" className="click-to-copy-link">Click to copy</a>
+        <a href="/" className="click-to-copy-link">Click to copy</a>
         <div className="related-topics-container">
           <p className="related-topics">Related Topics</p>
-          <a href="#">2022 Midterm elections</a>
-          <a href="#">Donald Trump</a>
-          <a href="#">Ohio</a>
-          <a href="#">Georgia</a>
-          <a href="#">Government and politics</a>
-          <a href="#">Presidential elections</a>
-          <a href="#">Elections</a>
-          <a href="#">Primary elections</a>
-          <a href="#">Election 2020</a>
+          <a href="/">2022 Midterm elections</a>
+          <a href="/">Donald Trump</a>
+          <a href="/">Ohio</a>
+          <a href="/">Georgia</a>
+          <a href="/">Government and politics</a>
+          <a href="/">Presidential elections</a>
+          <a href="/">Elections</a>
+          <a href="/">Primary elections</a>
+          <a href="/">Election 2020</a>
         </div>
       </div>
     </div>

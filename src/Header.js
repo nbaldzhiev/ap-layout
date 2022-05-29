@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import { Link } from "react-router-dom";
 import ApLogo from "./ap-logo.png";
@@ -18,7 +18,7 @@ function Header() {
         <div className="non-collapsible-container">
           <div className="logo-container">
             <Link to="/" className="logo-link">
-              <img src={ApLogo} placeholder="AP logo" className="logo-image" width="64" height="64"/>
+              <img src={ApLogo} alt="AP logo" className="logo-image" width="64" height="64"/>
             </Link>
             <p className="logo-site-title">
               AP News
@@ -39,10 +39,10 @@ function Header() {
               <Link to="/photography" className="news-category" style={displayTernary}>Photography</Link>
               <Link to="/videos" className="news-category" style={displayTernary}>Videos</Link>
               <p className="news-category listen-category" style={displayTernary}>Listen</p>
-              <img className="search-icon" src={SearchIcon} placeholder="search icon" width="24" height="24" style={displayTernary} />
+              <img className="search-icon" src={SearchIcon} alt="search icon" width="24" height="24" style={displayTernary} />
               <div className="sections-container" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}}>
                 <p className="news-category" style={displayTernary}>Sections</p>
-                {isExpanded === 'block' ? <img className="close-icon-mobile" src={closeIcon} placeholder="collapse icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} style={{display: isExpanded === 'block' ? 'block' : 'none'}} /> : <img className="hamburger-icon" src={HamburgerIcon} placeholder="hamburger icon" width="24" height="24" style={displayTernary} /> }
+                {isExpanded === 'block' ? <img className="close-icon-mobile" src={closeIcon} alt="collapse icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} style={{display: isExpanded === 'block' ? 'block' : 'none'}} /> : <img className="hamburger-icon" src={HamburgerIcon} alt="hamburger icon" width="24" height="24" style={displayTernary} /> }
               </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ function Header() {
                 <Link to="/financial-markets" className="expanded-nested-news-category">Financial Markets</Link>
               </div>
             </div>
-            <img className="close-icon-desktop" src={closeIcon} placeholder="close icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} />
+            <img className="close-icon-desktop" src={closeIcon} alt="close icon" width="20" height="20" onClick={() => {isExpanded === 'none' ? setIsExpanded('block') : setIsExpanded('none')}} />
           </div>
           <div className="bottom-row">
             <Link to="/technology" className="expanded-news-category">Technology</Link>

@@ -1,5 +1,5 @@
 import './App.css';
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header.js";
 import HomeNews from "./HomeNews.js";
 import SelectedNewsArticle from "./SelectedNewsArticle.js";

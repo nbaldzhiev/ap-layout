@@ -27,27 +27,27 @@ function HomeNews(props) {
   const numberOfNewsStories = 30;
 
   const loremAPIEndpoint = 'https://baconipsum.com/api/?type=meat-and-filler&paras=6'
-  async function getNewsText() {
-    const response = await fetch(loremAPIEndpoint);
-    const data = await response.json();
-    setNewsText(data);
-  }
   const mainArticleText = newsText.length ? newsText[0].slice(0, 265) : 'loading';
 
-  async function getPhotosByCategory(category) {
-    const response = await fetch(
-      `${baseUrl}${searchEndpoint}?query=${category}&per_page=${numberOfNewsStories}`,
-      {
-        method: 'GET',
-        headers: {'Authorization': authToken}
-      }
-    );
-    const data = await response.json();
-    setPhotos(data.photos);
-  }
-
   useEffect(() => {
+    async function getPhotosByCategory(category) {
+      const response = await fetch(
+        `${baseUrl}${searchEndpoint}?query=${category}&per_page=${numberOfNewsStories}`,
+        {
+          method: 'GET',
+          headers: {'Authorization': authToken}
+        }
+      );
+      const data = await response.json();
+      setPhotos(data.photos);
+    };
     getPhotosByCategory(category);
+  
+    async function getNewsText() {
+      const response = await fetch(loremAPIEndpoint);
+      const data = await response.json();
+      setNewsText(data);
+    }
     getNewsText();
   }, [])
 
@@ -78,21 +78,21 @@ function HomeNews(props) {
           <p className="article-description">ZAPORIZHZHIA, Ukraine (AP) — {mainArticleText}.</p>
           <div className="links-section">
             <div className="link-icons">
-              <a href="#"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
-              <a href="#"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
-              <a href="#"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
+              <a href="/"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
+              <a href="/"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
+              <a href="/"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
             </div>
             <div className="topic-links">
-              <a href="#">Europe-USA Ties</a>
-              <a href="#">Business</a>
-              <a href="#">AP Top News</a>
-              <a href="#">World News</a>
-              <a href="#">Hot Stocks</a>
+              <a href="/">Europe-USA Ties</a>
+              <a href="/">Business</a>
+              <a href="/">AP Top News</a>
+              <a href="/">World News</a>
+              <a href="/">Hot Stocks</a>
             </div>
           </div>
         </div>
         <div className="home-news-second-news-column">
-          <a className="button-link topic-headliner" href="#">Russia-Ukraine war</a>
+          <a className="button-link topic-headliner" href="/">Russia-Ukraine war</a>
           {
             photos.length ? photos.slice(1, 6).map(
               photo => <div className="secondary-news-article" key={photos.indexOf(photo)}>
@@ -132,7 +132,7 @@ function HomeNews(props) {
             ) : 'loading'
           }
           <hr className="separator-line"/>
-          <a className="button-link top-news-headliner" href="#">All Top News →</a>
+          <a className="button-link top-news-headliner" href="/">All Top News →</a>
         </div>
       </div>
     <Outlet />
