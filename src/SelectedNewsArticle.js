@@ -7,7 +7,6 @@ import emailIcon from "./email.png";
 
 function SelectedNewsArticle() {
 
-  const { articleId } = useParams();
   const [photo, setPhoto] = useState(null);
 
   const articleTitle = photo ? photo.alt : 'loading';
@@ -21,6 +20,7 @@ function SelectedNewsArticle() {
   const searchEndpoint = 'photos';
 
   useEffect(() => {
+    const { articleId } = useParams();
     async function getPhoto() {
       const response = await fetch(
         `${baseUrl}${searchEndpoint}/${articleId}`,

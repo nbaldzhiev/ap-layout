@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 function HomeNews(props) {
 
-  const category = props.category;
   const [photos, setPhotos] = useState([]);
   const [newsText, setNewsText] = useState([]);
   const { pathname } = useLocation();
@@ -41,7 +40,7 @@ function HomeNews(props) {
       const data = await response.json();
       setPhotos(data.photos);
     };
-    getPhotosByCategory(category);
+    getPhotosByCategory(props.category);
   
     async function getNewsText() {
       const response = await fetch(loremAPIEndpoint);
