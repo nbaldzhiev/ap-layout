@@ -9,6 +9,7 @@ function SelectedNewsArticle() {
 
   const { articleId } = useParams();
   const [photo, setPhoto] = useState(null);
+  const [articleText, setArticleText] = useState('loading');
 
   const articleTitle = photo ? photo.alt : 'loading';
   const articleAuthor = photo ? photo.photographer : "loading";
@@ -19,6 +20,8 @@ function SelectedNewsArticle() {
   const baseUrl = 'https://api.pexels.com/v1/';
   const authToken = '563492ad6f917000010000014065df06dbb24fc08d9c3df9dcd9e597';
   const searchEndpoint = 'photos';
+
+  const loremAPIEndpoint = 'https://baconipsum.com/api/?type=meat-and-filler&paras=14'
 
   useEffect(() => {
     async function getPhoto() {
@@ -32,7 +35,14 @@ function SelectedNewsArticle() {
       const data = await response.json();
       setPhoto(data);
     }
+    async function getArticleText() {
+      const response = await fetch(loremAPIEndpoint);
+      const data = await response.json();
+      console.log(data);
+      setArticleText(data);
+    }
     getPhoto();
+    getArticleText();
   }, [articleId])
 
   return (
@@ -47,24 +57,32 @@ function SelectedNewsArticle() {
       <div className="image-container">
         <img className="article-image" alt={articleTitle} src={articleLandscapeSrc} />
       </div>
-      <div className="links-container">
-        <div className="icons-container">
-          <a href="/"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
-          <a href="/"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
-          <a href="/"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
+      <div className="content-container">
+        <div className="links-container">
+          <div className="icons-container">
+            <a href="/"><img src={facebookLogo} alt="facebook logo" width="32" height="32" /></a>
+            <a href="/"><img src={twitterIcon} alt="twitter logo" width="32" height="32" /></a>
+            <a href="/"><img src={emailIcon} alt="email logo" width="32" height="32" /></a>
+          </div>
+          <a href="/" className="click-to-copy-link">Click to copy</a>
+          <div className="related-topics-container">
+            <p className="related-topics">Related Topics</p>
+            <a href="/">2022 Midterm elections</a>
+            <a href="/">Donald Trump</a>
+            <a href="/">Ohio</a>
+            <a href="/">Georgia</a>
+            <a href="/">Government and politics</a>
+            <a href="/">Presidential elections</a>
+            <a href="/">Elections</a>
+            <a href="/">Primary elections</a>
+            <a href="/">Election 2020</a>
+          </div>
         </div>
-        <a href="/" className="click-to-copy-link">Click to copy</a>
-        <div className="related-topics-container">
-          <p className="related-topics">Related Topics</p>
-          <a href="/">2022 Midterm elections</a>
-          <a href="/">Donald Trump</a>
-          <a href="/">Ohio</a>
-          <a href="/">Georgia</a>
-          <a href="/">Government and politics</a>
-          <a href="/">Presidential elections</a>
-          <a href="/">Elections</a>
-          <a href="/">Primary elections</a>
-          <a href="/">Election 2020</a>
+        <div className="article-text-container">
+          RAS AL-KHAIMAH, United Arab Emirates (AP)
+          {
+            Array.isArray(articleText) ? articleText.map(paragraph => <p className="article-text-paragraph">{paragraph}</p>) : articleText
+          }
         </div>
       </div>
     </div>

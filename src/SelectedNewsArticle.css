@@ -40,8 +40,13 @@
 
 .image-container > img {
     object-fit: cover;
-    width: 931px;
+    width: auto;
     height: 620.977px;
+}
+
+.links-container {
+    position: sticky;
+    top: 0;
 }
 
 .links-container > .icons-container {
@@ -84,4 +89,23 @@
     text-decoration: none;
     color: #0a3175;
     margin-bottom: .4rem;
+}
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.article-text-container {
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 3rem;
+    width: 800px;
+    font-size: 1.2rem;
+}
+
+.article-text-paragraph {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
 }
