@@ -109,3 +109,30 @@
     margin-bottom: 1rem;
 
 }
+
+@media (max-width: 768px) {
+    .image-container > img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+
+    .article-meta-container {
+        font-size: 1rem;
+    }
+
+    .links-container {
+        display: none;
+    }
+
+    .article-text-container {
+        margin: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+}

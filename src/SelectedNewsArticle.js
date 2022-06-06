@@ -38,7 +38,6 @@ function SelectedNewsArticle() {
     async function getArticleText() {
       const response = await fetch(loremAPIEndpoint);
       const data = await response.json();
-      console.log(data);
       setArticleText(data);
     }
     getPhoto();
@@ -79,9 +78,8 @@ function SelectedNewsArticle() {
           </div>
         </div>
         <div className="article-text-container">
-          RAS AL-KHAIMAH, United Arab Emirates (AP)
           {
-            Array.isArray(articleText) ? articleText.map(paragraph => <p className="article-text-paragraph">{paragraph}</p>) : articleText
+            Array.isArray(articleText) ? articleText.map(paragraph => <p className="article-text-paragraph" key={articleText.indexOf(paragraph)}>{articleText.indexOf(paragraph) === 0 ? 'RAS AL-KHAIMAH, United Arab Emirates (AP) — ' : ''}{paragraph}</p>) : articleText
           }
         </div>
       </div>
