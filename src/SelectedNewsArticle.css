@@ -46,7 +46,7 @@
 
 .links-container {
     position: sticky;
-    top: 0;
+    top: 8rem;
 }
 
 .links-container > .icons-container {
