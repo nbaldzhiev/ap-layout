@@ -1,6 +1,7 @@
 .home-news-container {
     width: 1300px;
     margin: 0 auto;
+    padding-bottom: 2rem;
 }
 
 .home-news-red-line {
@@ -91,7 +92,6 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 650px;
 }
 
 .secondary-news-article .article-title {
