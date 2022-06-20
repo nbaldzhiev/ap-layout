@@ -3,8 +3,8 @@
 }
 
 .category-title-red-line {
-    width: 64px;
-    height: 7px;
+    width: 60px;
+    height: 8px;
     background-color: #ff322e;
     border: none;
 }
@@ -24,7 +24,12 @@
     margin-bottom: 1.8rem;
 }
 
+.articles-container {
+    display: flex;
+}
+
 .articles-container .links-container {
+    margin-right: 3rem;
     position: sticky;
     top: 8rem;
 }
@@ -42,15 +47,65 @@
 
 .category-click-to-copy-link {
     font-size: 1.1rem;
+    width: 115px;
+    height: 32px;
     border: 1px solid #000000;
     border-radius: 15px;
     color: #000000;
     text-align: center;
-    margin-top: .5rem;
     margin-bottom: 2rem;
     font-weight: 300;
-    padding-top: .1rem;
-    padding-bottom: .1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: .1rem 1rem;
+}
+
+.articles-list-container .list-article-title {
+    font-size: 1.75rem;
+    color: #2c2c2c;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.articles-container .authors-container {
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #2c2c2c;;
+}
+
+.articles-container .authors-container .elapsed-time {
+    margin-left: 1.2rem;
+    color: #828282;;
+}
+
+.list-article-thumbnail-text-container {
+    margin-top: 1rem;
+}
+
+.list-article-thumbnail-text-container img {
+    object-fit: cover;
+    width: auto;
+    height: 191.969px;
+}
+
+.list-article-thumbnail-text-container {
+    display: flex;
+}
+
+.list-article-thumbnail-text-container .list-article-text {
+    margin-left: 1.4rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    width: 50%;
+}
+
+.list-article-item {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.list-article-separator-line {
+    margin-top: 1.5rem;
+    color: lightgray;
+    opacity: 10%;
 }

@@ -18,7 +18,9 @@ function App() {
           <Route path="/" element={<HomeNews category={defaultCategory} />} >
             <Route path=":articleId" element={<SelectedNewsArticle />} />
           </Route>
-          <Route path="/european-union" element={<NewsCategoryList />} />
+          <Route path="/european-union" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
           <Route path="/world-news" element={<NewsCategoryList />} />
           <Route path="/politics" element={<NewsCategoryList />} />
           <Route path="/sports" element={<NewsCategoryList />} />

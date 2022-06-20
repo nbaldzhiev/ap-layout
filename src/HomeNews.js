@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import './HomeNews.css';
 import facebookLogo from "./facebook.png";
 import twitterIcon from "./twitter.png";
 import emailIcon from "./email.png";
-import { Link } from "react-router-dom";
 
 function HomeNews(props) {
 
