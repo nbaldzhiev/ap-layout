@@ -38,11 +38,10 @@ function NewsCategoryList() {
     }
     getPhotos();
     getParagraphs();
-  }, [pathname])
+  }, [pathname, category])
 
 
   useEffect(() => {
-    console.log(pathname)
     if (pathname.split('/').length > 2) {
       document.querySelector('.news-category-list > .category-title-container').style.display = 'none';
       document.querySelector('.news-category-list > .articles-container').style.display = 'none';
