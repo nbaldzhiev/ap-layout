@@ -30,6 +30,8 @@
 
 .articles-container .links-container {
     margin-right: 3rem;
+    align-self: flex-start;
+    height: auto;
     position: sticky;
     top: 8rem;
 }

@@ -21,20 +21,48 @@ function App() {
           <Route path="/european-union" element={<NewsCategoryList />} >
             <Route path=":articleId" element={<SelectedNewsArticle />} />
           </Route>
-          <Route path="/world-news" element={<NewsCategoryList />} />
-          <Route path="/politics" element={<NewsCategoryList />} />
-          <Route path="/sports" element={<NewsCategoryList />} />
-          <Route path="/entertainment" element={<NewsCategoryList />} />
-          <Route path="/business" element={<NewsCategoryList />} />
-          <Route path="/technology" element={<NewsCategoryList />} />
-          <Route path="/health" element={<NewsCategoryList />} />
-          <Route path="/science" element={<NewsCategoryList />} />
-          <Route path="/finance" element={<NewsCategoryList />} />
-          <Route path="/lifestyle" element={<NewsCategoryList />} />
-          <Route path="/photography" element={<NewsCategoryList />} />
-          <Route path="/videos" element={<NewsCategoryList />} />
-          <Route path="/top-news" element={<NewsCategoryList />} />
-          <Route path="/europe-news" element={<NewsCategoryList />} />
+          <Route path="/world-news" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/politics" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/sports" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/entertainment" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/business" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/technology" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/health" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/science" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/finance" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/lifestyle" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/photography" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/videos" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/top-news" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
+          <Route path="/europe-news" element={<NewsCategoryList />} >
+            <Route path=":articleId" element={<SelectedNewsArticle />} />
+          </Route>
         </Routes>
 
       </main>
