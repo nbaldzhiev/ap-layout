@@ -70,14 +70,18 @@ function NewsCategoryList() {
         <div className="articles-list-container">
           {
             photos.length ? photos.map(photo => <div key={photo.id} className="list-article-item">
-                <Link to={ `${photo.id}` } className="list-article-title">{photo.alt.slice(0, 80)}</Link>
-                <div className="authors-container">
-                  <p className="by-author">By {photo.photographer}</p>
-                  <p className="elapsed-time">{Number(photo.photographer_id.toString()[0]) % 2 === 0 ? photo.photographer_id.toString()[0].toString() + ' hours ago' : photo.photographer_id.toString()[0].toString() + ' minutes ago'}</p>
-                </div>
-                <div className="list-article-thumbnail-text-container">
-                  <img className="list-article-thumbnail" src={photo.src.landscape} alt={photo.alt} />
-                  <p className="list-article-text">{paragraphs[photos.indexOf(photo)]}</p>
+                <div className="list-article-item-main-content">
+                  <div className="list-article-title-meta-container">
+                    <Link to={ `${photo.id}` } className="list-article-title">{photo.alt.slice(0, 80)}</Link>
+                    <div className="authors-container">
+                      <p className="by-author">By {photo.photographer}</p>
+                      <p className="elapsed-time">{Number(photo.photographer_id.toString()[0]) % 2 === 0 ? photo.photographer_id.toString()[0].toString() + ' hours ago' : photo.photographer_id.toString()[0].toString() + ' minutes ago'}</p>
+                    </div>
+                  </div>
+                  <div className="list-article-thumbnail-text-container">
+                    <img className="list-article-thumbnail" src={photo.src.landscape} alt={photo.alt} />
+                    <p className="list-article-text">{paragraphs[photos.indexOf(photo)]}</p>
+                  </div>
                 </div>
                 <hr className="list-article-separator-line"/>
               </div>
