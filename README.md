@@ -7,3 +7,5 @@ A React app, hosted on [Netlify](https://nbaldzhiev-ap-layout.netlify.app/), to 
 This project is used to practice React, React Router and CSS Grid + Flexbox. The app replicates the layout of the Associated Press homepage, which is a news site. Since news APIs tend to be paid, I decided to use the [Pexesl API](https://www.pexels.com/api/) to get different thumbnail photos. The titles of the "news" stories are taken from the photographs' descriptions.
 
 The website is somewhat responsive with a single breakpoint at max-width 768px to allow for better rendering on smartphones.
+
+> **_NOTE:_**  This project is not free of bugs and this is normal for this type of a project used for learning purposes. Fixing these bugs is part of my path towards learning news things.
