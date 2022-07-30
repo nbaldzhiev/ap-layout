@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from "react-router-dom";
 import ApLogo from "./ap-logo.png";
@@ -12,12 +12,15 @@ function Header() {
 
   const displayTernary = {display: isExpanded === 'block' ? 'none' : 'block'};
 
-  if (document.querySelector('.sections-collapsible')) {
-    const elements = document.querySelectorAll('.expanded-news-category');
-    elements.forEach(element => element.addEventListener('onclick', () => {
-      document.querySelector('.sections-collapsible').style.display = 'none';
-    }))
-  }
+  useEffect(() => {
+    if (document.querySelector('.sections-collapsible')) {
+      const elements = document.querySelectorAll('.expanded-news-category');
+      elements.forEach(element => element.addEventListener('onclick', () => {
+        console.log('hi');
+        document.querySelector('.sections-collapsible').style.display = 'none';
+      }))
+    }
+  }, [isExpanded])
 
   return (
     <header className="App-header">
