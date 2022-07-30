@@ -13,15 +13,15 @@ function Header() {
   const displayTernary = {display: isExpanded === 'block' ? 'none' : 'block'};
 
   useEffect(() => {
-    console.log('lol');
     if (document.querySelector('.sections-collapsible')) {
-      console.log('in if');
-      const elements = document.querySelectorAll('.expanded-news-category');
-      elements.forEach(element => element.addEventListener('click', (event) => {
-        event.preventDefault();
-        console.log('hi');
-        document.querySelector('.sections-collapsible').style.display = 'none';
-      }))
+      document.querySelectorAll('.expanded-news-category').forEach(
+        element => element.addEventListener('click', (event) => {
+          event.preventDefault();
+          document.querySelector('.sections-collapsible').style.display = 'none';
+          setIsExpanded('none');
+        }
+        )
+      )
     }
   }, [isExpanded])
 
