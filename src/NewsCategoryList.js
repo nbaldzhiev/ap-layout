@@ -49,6 +49,7 @@ function NewsCategoryList() {
       document.querySelector('.news-category-list > .category-title-container').style.display = 'block';
       document.querySelector('.news-category-list > .articles-container').style.display = 'flex';
     }
+    document.querySelector('.App').style.height = '100%';
   }, [pathname])
 
   return (
