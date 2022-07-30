@@ -13,7 +13,9 @@ function Header() {
   const displayTernary = {display: isExpanded === 'block' ? 'none' : 'block'};
 
   useEffect(() => {
+    console.log('lol');
     if (document.querySelector('.sections-collapsible')) {
+      console.log('in if');
       const elements = document.querySelectorAll('.expanded-news-category');
       elements.forEach(element => element.addEventListener('onclick', () => {
         console.log('hi');
