@@ -12,6 +12,13 @@ function Header() {
 
   const displayTernary = {display: isExpanded === 'block' ? 'none' : 'block'};
 
+  if (document.querySelector('.sections-collapsible')) {
+    const elements = document.querySelectorAll('.expanded-news-category');
+    elements.forEach(element => element.addEventListener('onclick', () => {
+      document.querySelector('.sections-collapsible').style.display = 'none';
+    }))
+  }
+
   return (
     <header className="App-header">
       <div className="header-container">
