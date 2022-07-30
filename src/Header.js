@@ -17,7 +17,8 @@ function Header() {
     if (document.querySelector('.sections-collapsible')) {
       console.log('in if');
       const elements = document.querySelectorAll('.expanded-news-category');
-      elements.forEach(element => element.addEventListener('onclick', () => {
+      console.log(elements);
+      elements.forEach(element => element.addEventListener('mouseover', () => {
         console.log('hi');
         document.querySelector('.sections-collapsible').style.display = 'none';
       }))
