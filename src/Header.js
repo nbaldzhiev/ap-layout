@@ -17,9 +17,9 @@ function Header() {
     if (document.querySelector('.sections-collapsible')) {
       console.log('in if');
       const elements = document.querySelectorAll('.expanded-news-category');
-      console.log(elements);
-      elements.forEach(element => element.addEventListener('mouseover', () => {
+      elements.forEach(element => element.addEventListener('onclick', (event) => {
         console.log('hi');
+        event.preventDefault();
         document.querySelector('.sections-collapsible').style.display = 'none';
       }))
     }
