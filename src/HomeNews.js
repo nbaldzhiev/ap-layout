@@ -54,9 +54,11 @@ function HomeNews(props) {
     if (pathname.length > 1) {
       document.querySelector('.home-news-container > div:first-child').style.display = 'none';
       document.querySelector('.home-news-container > div:nth-child(2)').style.display = 'none';
+      document.querySelector('.App').style.height = '100%';
     } else {
       document.querySelector('.home-news-container > div:first-child').style.display = 'block';
       document.querySelector('.home-news-container > div:nth-child(2)').style.display = 'flex';
+      document.querySelector('.App').style.height = '100vh';
     }
   }, [pathname])
 
